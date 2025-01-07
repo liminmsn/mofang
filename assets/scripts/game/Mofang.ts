@@ -12,9 +12,9 @@ export class Mofang extends GameNodeBase {
     }
     Down(ent: EventMouse | EventTouch) {
         // this.init_pos = ent.getLocationInView();
-        //绑定鼠标移动事件
+        //绑定移动事件
         this.OnAll([NodeEventType.MOUSE_MOVE, NodeEventType.TOUCH_MOVE], this.Move);
-        //鼠标抬起就取消移动事件绑定
+        //取消移动事件
         this.OnAll([NodeEventType.MOUSE_UP, NodeEventType.TOUCH_END], () => {
             [NodeEventType.MOUSE_MOVE, NodeEventType.TOUCH_MOVE].forEach(item => this.node.off(item));
         });
