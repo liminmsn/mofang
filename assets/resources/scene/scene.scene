@@ -473,7 +473,10 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_id": "3feqIwl8JC04EK8hc5ShPN"
+    "mf": {
+      "__id__": 14
+    },
+    "_id": "10ecq7pkhDkbzKYFNrXY57"
   },
   {
     "__type__": "cc.Node",
