@@ -516,7 +516,7 @@
     "_string": "X",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 20,
+    "_actualFontSize": 23,
     "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 0,
@@ -983,7 +983,7 @@
     "_string": "Y",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 20,
+    "_actualFontSize": 23,
     "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 0,
@@ -1416,6 +1416,14 @@
     "cobe": {
       "__id__": 38
     },
+    "slider_arr": [
+      {
+        "__id__": 18
+      },
+      {
+        "__id__": 30
+      }
+    ],
     "_id": "70JP6siyFJE7OcdGNlUkyU"
   },
   {

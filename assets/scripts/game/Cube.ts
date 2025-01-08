@@ -1,4 +1,4 @@
-import { _decorator, NodeSpace, Quat, quat, v3 } from 'cc';
+import { _decorator, NodeSpace, Quat, quat, v3, Vec3 } from 'cc';
 import { GameNodeBase } from '../lib/GameNodeBase';
 const { ccclass, type } = _decorator;
 
@@ -13,7 +13,7 @@ export class Cube extends GameNodeBase {
     rotaryZ(num: number) {
         this.rotate(v3(0, 0, 1), num);
     }
-    rotate(axis = v3(0, 1, 0), rotationSpeed = 5) {
+    rotate(axis: Vec3, rotationSpeed: number) {
         let angle = rotationSpeed;  // 旋转角度
         let quatRotation = quat();
         Quat.fromAxisAngle(quatRotation, axis, angle);
