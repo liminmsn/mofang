@@ -1,12 +1,17 @@
 import { Component, EventMouse, EventTouch } from "cc";
 
-export class GameNodeBase extends Component {
+export abstract class GameNodeBase extends Component {
     constructor() {
         super();
     }
-    public OnAll(ents: string[], fun: (ent: EventMouse | EventTouch) => void) {
-        for (let i = 0; i < ents.length; i++) {
-            this.node.on(ents[i], fun, this);
+    public OnAll(ent_arr: string[], fun: (ent: EventMouse | EventTouch) => void) {
+        for (let i = 0; i < ent_arr.length; i++) {
+            this.node.on(ent_arr[i], fun, this);
+        }
+    }
+    public OffAll(ent_arr: string[]) {
+        for (let i = 0; i < ent_arr.length; i++) {
+            this.node.off(ent_arr[i]);
         }
     }
 }

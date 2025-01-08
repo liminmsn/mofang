@@ -1,4 +1,4 @@
-import { _decorator, EventMouse, EventTouch, NodeEventType, Vec2, Node } from 'cc';
+import { _decorator, EventMouse, EventTouch, NodeEventType, Vec2, Node, misc, v3, Vec3, Quat } from 'cc';
 import { GameNodeBase } from '../lib/GameNodeBase';
 const { ccclass, type } = _decorator;
 
@@ -7,7 +7,7 @@ export class Mofang extends GameNodeBase {
     @type(Node)
     mf: Node;
     start() {
-        console.log('my mf');
+        // console.log('my mf');
         this.OnAll([NodeEventType.MOUSE_DOWN, NodeEventType.TOUCH_START], this.Down);
     }
     Down(ent: EventMouse | EventTouch) {
@@ -16,12 +16,18 @@ export class Mofang extends GameNodeBase {
         this.OnAll([NodeEventType.MOUSE_MOVE, NodeEventType.TOUCH_MOVE], this.Move);
         //取消移动事件
         this.OnAll([NodeEventType.MOUSE_UP, NodeEventType.TOUCH_END], () => {
-            [NodeEventType.MOUSE_MOVE, NodeEventType.TOUCH_MOVE].forEach(item => this.node.off(item));
+            this.OffAll([NodeEventType.MOUSE_MOVE, NodeEventType.TOUCH_MOVE]);
         });
     }
 
     Move(ent: EventMouse | EventTouch) {
-        console.log(ent.getDelta());
+        const delta = ent.getDelta();
+        const speed = 0.002;
+        const horizontal = delta.x * speed;
+        const vertical = delta.y * speed;
+    }
+    protected update(dt: number): void {
+
     }
 }
 
