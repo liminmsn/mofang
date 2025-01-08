@@ -19,7 +19,4 @@ export class Cube extends GameNodeBase {
         Quat.fromAxisAngle(quatRotation, axis, angle);
         this.node.rotate(quatRotation);
     }
-    protected update(dt: number): void {
-
-    }
 }
