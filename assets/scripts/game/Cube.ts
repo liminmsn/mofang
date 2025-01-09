@@ -4,6 +4,10 @@ const { ccclass, type } = _decorator;
 
 @ccclass
 export class Cube extends GameNodeBase {
+    rotation:Quat;
+    protected start(): void {
+        this.rotation = this.node.getRotation();
+    }
     rotaryX(num: number) {
         this.rotate(v3(1, 0, 0), num);
     }
@@ -18,5 +22,8 @@ export class Cube extends GameNodeBase {
         let quatRotation = quat();
         Quat.fromAxisAngle(quatRotation, axis, angle);
         this.node.rotate(quatRotation);
+    }
+    resetPos() {
+        this.node.setRotation(this.rotation);
     }
 }
